@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const app = express();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
@@ -62,9 +62,6 @@ app.get('/', (req, res) => {
     console.log('server running: ')
     res.send('server running: ');
 })
-
-
-//opSBtIl0cY1F2gYI geniusmechanic
 
 app.listen(port, () => {
     console.log('Port running:', port);
